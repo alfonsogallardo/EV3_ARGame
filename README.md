@@ -1,2 +1,2 @@
 # EV3_ARGame
- Inicio de Proyecto
+Esta es la Evaluacion final del ramo Desarrollo de Videojuegos realizado por Alfonso Gallardo
