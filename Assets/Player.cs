@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControlPlayer : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public CharacterController controller;
+    
 
-    public float velocidad;
-    public float velRotacion;
+    public float moveSpeed=10f;
+    public float turnSpeed=50f;
 
     private bool adelante;
     private bool atras;
@@ -18,6 +18,7 @@ public class ControlPlayer : MonoBehaviour
     private bool rotIZquierda;
 
     public Text nombre;
+    public GameObject player;
 
     private void Start()
     {
@@ -28,32 +29,32 @@ public class ControlPlayer : MonoBehaviour
     {
         if (adelante == true)
         {
-            controller.Move(transform.forward * velocidad * Time.deltaTime);
+            player.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
         }
 
         if (atras == true)
         {
-            controller.Move(-transform.forward * velocidad * Time.deltaTime);
+            player.transform.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
         }
 
         if (derecha == true)
         {
-            controller.Move(transform.right * velocidad * Time.deltaTime);
+            player.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         }
 
         if (izquierda == true)
         {
-            controller.Move(-transform.right * velocidad * Time.deltaTime);
+            player.transform.Translate(-Vector3.right * moveSpeed * Time.deltaTime);
         }
 
         if (rotDerecha == true)
         {
-            transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
+            player.transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime);
         }
 
         if (rotIZquierda == true)
         {
-            transform.Rotate(-Vector3.up * velRotacion * Time.deltaTime);
+            player.transform.Rotate(-Vector3.up * turnSpeed * Time.deltaTime);
         }
     }
 
