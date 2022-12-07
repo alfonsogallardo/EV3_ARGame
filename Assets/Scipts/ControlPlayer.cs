@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControlPlayer : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class ControlPlayer : MonoBehaviour
     private bool izquierda;
     private bool rotDerecha;
     private bool rotIZquierda;
+
+    public Text nombre;
+
+    private void Start()
+    {
+        nombre.text = PlayerPrefs.GetString("nombre");
+    }
 
     void Update()
     {
@@ -86,4 +94,6 @@ public class ControlPlayer : MonoBehaviour
         rotDerecha = false;
         rotIZquierda = false;
     }
+
+
 }
